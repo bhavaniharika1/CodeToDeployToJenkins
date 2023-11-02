@@ -4,7 +4,9 @@ node {
       git url: 'https://github.com/bhavaniharika1/CodeToDeployToJenkins.git', branch: 'main'
       mvnHome = tool 'Maven'
    }
-
+   stage ('SonarQube') {
+      sh "'${mvnHome}/bin/mvn' clean verify sonar:sonar"
+  }
   stage ('Clean') {
       sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean"
   }
