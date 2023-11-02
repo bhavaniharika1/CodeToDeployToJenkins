@@ -5,11 +5,7 @@ pipeline {
          jdk 'Java'
     }
     stages {
-        stage('Stage-1 : SonarQube') { 
-            steps {
-                sh 'mvn sonar:sonar'
-            }
-        }
+       
         stage('Stage-2 : Clean') { 
             steps {
                 sh 'mvn clean'
