@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Stage-1 : SonarQube') { 
             steps {
-                sh 'mvn clean verify sonar:sonar'
+                sh 'mvn sonar:sonar'
             }
         }
         stage('Stage-2 : Clean') { 
